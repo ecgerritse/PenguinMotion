@@ -62,8 +62,10 @@ class Penguin(object):
                                             above_plane.append(0)
                                         else:
                                             above_plane.append(1)
-                        if (all(i == 0 for i in above_plane)) or (all i == 1 for i in above_plane)):
+                        if (all(i == 0 for i in above_plane)) or (all (i == 1 for i in above_plane)):
                                 self.boundary = True
+                        else:
+                        	self.boundary = False
 		return F_selfPropulsion + F_boundary + F_repulsion
 
 	def net_torque(self, T_in, T_noise, T_align):
